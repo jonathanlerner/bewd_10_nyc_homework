@@ -1,0 +1,5 @@
+1) cd <directory Name>
+2) git is a version control system that runs on a programmer's local machine. Github is a web-based version control system used for collaborative software development.
+3) git add <filename>
+4) all of the source code files and administrative files for a project
+5) git push origin master
