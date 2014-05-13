@@ -1,0 +1,5 @@
+1. CD into directory.
+2. Git is a method of sharing open source code on the command line. Github is a place to share in a community and keep track of code. Free and open source.
+3. To add files to git you have to git add add and commit and then finally push it to your repo. 
+4. A git hub repository is a way for a single user or group to store code and track changes. The repository is the one true source. 
+5. C
