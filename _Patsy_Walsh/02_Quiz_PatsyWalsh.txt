@@ -1,0 +1,15 @@
+1. How do I change directories using the command line?
+A - By using the command "cd", followed by the name of the directory you would like to change to
+
+2. What is git and GitHub?
+A - Git is an open source software language, while GitHub is a community and hosting for it.
+
+3. How do I add files to git?
+A - "git add ."
+
+4. What is a GitHub Repository?
+A - A GitHub Repository is where programmers would store their code on a server so it could be worked on with other programmers collectively.
+
+5. What is the correct way to push changes to your GitHub repo? 
+A - c. git push origin master
+
