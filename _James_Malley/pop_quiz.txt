@@ -1,0 +1,5 @@
+1. cd (.., ~, etc)
+2. git is a free, open source version control system and github is a place to socially share code, and facilitate collaboration for teams
+3. To make git aware: "git add", and then "git commit" to save them
+4. A github repo is the source code for any given project. It allows peers or strangers to make copies of the code to play with on their own. 
+5. git push origin master
