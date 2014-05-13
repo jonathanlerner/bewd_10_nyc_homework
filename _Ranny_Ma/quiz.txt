@@ -1,0 +1,5 @@
+1. cd
+2. Git is a program that allows you track changes. Github is a website that allows people to collaborate.
+3. git add
+4. A designated place where where your files are stored
+5. git push origin master after you have commited those changes
