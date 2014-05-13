@@ -1,0 +1,20 @@
+1. How do I change directories using the command line?
+-cd
+2. What is git and github?
+-git is source code management system
+-tracks changes in files
+-free and open source
+-collaboration
+-github is an online tool that makes collaboration easy
+-code community
+3. How do I add files to git?
+-git add (file name, directory or list of file names)
+4. What is a GitHub Repository?
+-a repository of all files for an individual or team of people
+-the one true source
+-change management system
+5. What is the correct way to push changes to your github repo?
+-C
+a. Git pull origin master
+b. git commit -m "push to github"
+c. git push origin master
