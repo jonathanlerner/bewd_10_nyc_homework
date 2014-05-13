@@ -1,0 +1,11 @@
+# 1 --cd .. --up one level -  cd <directory> --to parent directory  - cd . --to home
+
+#2 -- git is a version control system -- github is service using git to do distributed version control
+
+#3 -  git add <filenale>
+
+#4 - Github repository is a master record of a project code base which is managed and updated remotely
+
+#5 - git push origin master
+
+ 
