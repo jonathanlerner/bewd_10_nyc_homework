@@ -1,0 +1,5 @@
+cd
+version control language, community portal that uses git
+git add filename
+a location where a project lives
+git add file, git commit -m "" , git push
