@@ -1,0 +1,5 @@
+cd
+git = change management or versioning system; github = communities around git
+git add, then git commit, then git push
+a repository is a place where one can aggregate a variety of projects and libraries on github
+b. git commit -m "Push" and c. git push origin master
