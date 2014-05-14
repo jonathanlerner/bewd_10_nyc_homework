@@ -79,16 +79,17 @@ end
 def vote_counter(y, z)
   if y.capitalize!.match("Yay")
     increment=1
+    z=z+increment
+    print "Current upvotes: #{z}\n"
   elsif y.match("Nay")
     increment=0
+    z=z+increment
+    print "Current upvotes: #{z}\n"
   else
   	puts "Please say yay or nay. You might want to check your spelling."
-  	increment=0
   	user_response_again=gets.chomp!
-  	vote_counter(user_response_again, z)  #This recursive call is a bit buggy. Needs work  
+  	vote_counter(user_response_again, z)  #This recursive call is still a bit buggy. I'm flummoxed ! 
   end
-  z=z+increment
-  print "Current upvotes: #{z}\n"
 end
 
 puts "Please enter a title for your story"
