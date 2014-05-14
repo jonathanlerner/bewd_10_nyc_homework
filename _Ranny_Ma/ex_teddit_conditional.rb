@@ -11,7 +11,11 @@ class Teddit
     story = get_input
     puts "Please give it a category:"
     category = get_input
+<<<<<<< HEAD
     upvotes = calculate_upvotes(category)
+=======
+    upvotes = calculate_upvotes(story, category)
+>>>>>>> saving minor changes
     puts "New story added! #{story}, Category: #{category.capitalize}, Current Upvotes: #{upvotes}"
   end
 
