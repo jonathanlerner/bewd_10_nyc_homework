@@ -1,0 +1,8 @@
+just getting everything installed now.
+
+Quiz:
+1. cd
+2. Git is versioning. GitHub is the social collaboration tool that extends versioning into social file sharing and project collaboration.
+3. Touch and then add file.
+4. github is where files are shared across multiple users.
+5. b and c. need to commit and file and then push it. Commit does not mean that anything is actually sent though.
