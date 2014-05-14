@@ -1,0 +1,12 @@
+Week 2 Quiz
+1) How do I change directories using command line?
+cd
+2) What is git and github?
+git -- version control framework/system (open source, free)
+github - repository interface for pushing and pulling git updates (OS community)
+3) How do I add files to git?
+git add .
+4) What is a github repository?
+an assigned place for a collection of specific files, all changes, merges and additions
+5) What is the correct way to push changes to your github repo?
+git push origin master
