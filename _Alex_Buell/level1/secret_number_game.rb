@@ -28,7 +28,7 @@ class SecretNumberGame
   def play
     greeting
     @guesses.times do |x|
-      guesses_left = @guesses-1 #Find a way to decrement guesses_left each time through the loop.
+      guesses_left = @guesses-x #Find a way to decrement guesses_left each time through the loop.
       puts "\nYou have #{guesses_left} guesses left!"
       puts "Please make your first guess:"
       players_guess = $stdin.gets.chomp.to_i
