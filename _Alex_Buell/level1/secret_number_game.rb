@@ -40,23 +40,27 @@ class SecretNumberGame
   def greet(player_name)
     #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
     puts "Hello #{player_name}"
-    puts "Guess a the number (between 1 and 10)"
-    puts "You get #{@guesses} guesses"
+    puts "Guess the secret number (between 1 and 10)"
+    if @guesses == 1
+      puts "You get #{@guesses} guess"
+    else
+      puts "You get #{@guesses} guesses"
+    end
   end
 
   def created_by
     #Created_by is a string that includes your first and last name
-    puts "Created by: "+@first_name+" "+@last_name
+    puts "Created by: #{@first_name} #{@last_name}"
   end
 
 
   def correct?(players_guess)
-    if ___
+    if players_guess == @secret_number
       puts "You win! The number was #{@secret_number}."
       return true
-    elsif ___
+    elsif players_guess > @secret_number
       puts "Make your next guess higher than #{players_guess}"
-    elsif ___
+    elsif players_guess < @secret_number
       puts "Make your next guess lower than #{players_guess}"
     end
     false
