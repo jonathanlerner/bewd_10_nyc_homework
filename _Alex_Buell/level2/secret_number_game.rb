@@ -19,17 +19,17 @@
 class SecretNumberGame
   
   def initialize
-    @first_name = ___
-    @last_name = ___
-    @secret_number = ___
-    @guesses = ___
+    @first_name = 'Alex'
+    @last_name = 'Buell'
+    @secret_number = 3
+    @guesses = 5
   end
 
   def play
     greeting
     
     @guesses.times do |x|
-      guesses_left = ___ #Find a way to decrement guesses_left each time through the loop.
+      guesses_left = @guesses-x #Find a way to decrement guesses_left each time through the loop.
       puts "\nYou have #{guesses_left} guesses left!"
       puts "Please make your first guess:"
       players_guess = $stdin.gets.chomp.to_i
@@ -39,29 +39,40 @@ class SecretNumberGame
   end
 
   def ask_difficulty
-    ___ # As the user if they want to play on easy (1), medium (2), or hard (3)
+    # As the user if they want to play on easy (1), medium (2), or hard (3)
+    puts "Which difficulty would you like to play at? ( easy (1), medium (2), or hard (3) )"
+    @difficulty = gets.to_i
+    set_difficulty(@difficulty)
   end
 
   def set_difficulty(level)
-    ___ # limit the number of guesses based on the difficulty
+    @guesses = @guesses -level # limit the number of guesses based on the difficulty
   end
     
   def greet(player_name)
-    ___ #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
+    #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
+    puts "Hello #{player_name}"
+    puts "Guess the secret number (between 1 and 10)"
+    if @guesses == 1
+      puts "You get #{@guesses} guess"
+    else
+      puts "You get #{@guesses} guesses"
+    end
   end
 
   def created_by
-    ___ #Created_by is a string that includes your first and last name
+    #Created_by is a string that includes your first and last name
+    puts "Created by: #{@first_name} #{@last_name}"
   end
 
 
   def correct?(players_guess)
-    if ___
+    if players_guess == @secret_number
       puts "You win! The number was #{@secret_number}."
       return true
-    elsif ___
+    elsif players_guess > @secret_number
       puts "Make your next guess higher than #{players_guess}"
-    elsif ___
+    elsif players_guess < @secret_number
       puts "Make your next guess lower than #{players_guess}"
     end
     false
