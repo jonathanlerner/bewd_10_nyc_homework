@@ -31,7 +31,7 @@ class SecretNumberGame
     @guesses.times do |x|
       guesses_left = @guesses - x #Find a way to decrement guesses_left each time through the loop.
       puts "\nYou have #{guesses_left} guesses left!"
-      puts "Please make your first guess:"
+      puts "Please make your guess:"
       players_guess = $stdin.gets.chomp.to_i
       return if correct?(players_guess)
     end
