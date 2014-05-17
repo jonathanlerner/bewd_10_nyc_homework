@@ -37,7 +37,6 @@ class SecretNumberGame
       return if correct?(players_guess)
     end
     puts "You lost! :-( The number to guess was #{@secret_number}."
-      
   end
     
   def greet(player_name)
