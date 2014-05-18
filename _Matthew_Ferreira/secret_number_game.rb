@@ -38,7 +38,7 @@ class SecretNumberGame
   end
     
   def greet(player_name)
-    puts "Welcome to The Secret Number Game #{player_name}! The purpose of the game is for you to guess a secret number from 1-10. You have 10 guesses to figure it out! Use them wisely... " #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
+    puts "Welcome to The Secret Number Game #{player_name}! The purpose of the game is for you to guess a secret number from 1-10. You have #{@guesses} to figure it out! Use them wisely... " #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
   end
 
   def created_by
