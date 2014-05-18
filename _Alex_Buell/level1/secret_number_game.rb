@@ -58,9 +58,9 @@ class SecretNumberGame
     if players_guess == @secret_number
       puts "You win! The number was #{@secret_number}."
       return true
-    elsif players_guess > @secret_number
-      puts "Make your next guess higher than #{players_guess}"
     elsif players_guess < @secret_number
+      puts "Make your next guess higher than #{players_guess}"
+    elsif players_guess > @secret_number
       puts "Make your next guess lower than #{players_guess}"
     end
     false
