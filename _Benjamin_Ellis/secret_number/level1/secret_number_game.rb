@@ -38,11 +38,11 @@ class SecretNumberGame
   end
     
   def greet(player_name)
-    puts "Hello, ${player_name}" #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
+    puts "Hello, #{player_name}" #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
   end
 
   def created_by
-    @first_name + @last_name #Created_by is a string that includes your first and last name
+    @first_name + " " + @last_name #Created_by is a string that includes your first and last name
   end
 
 
