@@ -41,8 +41,25 @@ class SecretNumberGame
   def ask_difficulty
     # As the user if they want to play on easy (1), medium (2), or hard (3)
     puts "Which difficulty would you like to play at? ( easy (1), medium (2), or hard (3) )"
-    @difficulty = gets.to_i
-    set_difficulty(@difficulty)
+    @difficulty = gets.chomp
+    diff = 0
+
+    if @difficulty == '1' || @difficulty.downcase == 'easy'
+      puts 'You chose easy! Enjoy the maximum guesses!'
+      diff = 0
+    elsif @difficulty == '2' || @difficulty.downcase == 'medium'
+      puts 'You Chose medium, Enjoy 1 less guess!'
+      diff = 1
+    elsif @difficulty == '3' || @difficulty.downcase == 'hard'
+      puts 'You chose hard!  Enjoy 2 less guesses'
+      diff =2
+    else
+      puts "please enter a valid difficulty"
+      ask_difficulty
+    end 
+      
+
+    set_difficulty(diff)
   end
 
   def set_difficulty(level)
@@ -70,9 +87,9 @@ class SecretNumberGame
     if players_guess == @secret_number
       puts "You win! The number was #{@secret_number}."
       return true
-    elsif players_guess > @secret_number
-      puts "Make your next guess higher than #{players_guess}"
     elsif players_guess < @secret_number
+      puts "Make your next guess higher than #{players_guess}"
+    elsif players_guess > @secret_number
       puts "Make your next guess lower than #{players_guess}"
     end
     false
