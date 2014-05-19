@@ -24,16 +24,17 @@ class Teddit
   end
 
   def calculate_upvotes(story, category)
-    if story.includes?"cats"
-      category * 5;
-    elsif story.includes?"bacon"
-      category * 8;
-    elsif story.includes?"food"
-      category * 3;
-    else
-      category + 1
-  end
+    upvotes = 1
+    if story.include?"cats"
+      upvotes = (upvotes * 5)
 
+    elsif story.include?"bacon"
+      upvotes = (upvotes * 8)
+
+    elsif story.include?"food"
+      upvotes = (upvotes * 3) 
+  end
+end
 end
 
 teddit = Teddit.new
