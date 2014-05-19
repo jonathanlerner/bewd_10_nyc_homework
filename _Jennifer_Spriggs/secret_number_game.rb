@@ -27,9 +27,10 @@ class SecretNumberGame
 
   def play
     greeting
+    guesses_left = @guesses 
     @guesses.times do |x|
-      guesses_left = guesses.downto(0) #Find a way to decrement guesses_left each time through the loop.
       puts "\nYou have #{guesses_left} guesses left!"
+      guesses_left -= 1
       puts "Please make your first guess:"
       players_guess = $stdin.gets.chomp.to_i
       return if correct?(players_guess)
@@ -38,27 +39,27 @@ class SecretNumberGame
   end
     
   def greet(player_name)
-    puts "Welcome #{player_name}, to the Secret Number Game! You have #{guesses} to get the right number! Good luck!" #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
+    puts "Welcome #{player_name}, to the Secret Number Game! I'm thinking of a number from 1-10. You have #{@guesses} guesses to get it right!" 
   end
 
   def created_by
-    puts "Created by Jennifer Spriggs." #Created_by is a string that includes your first and last name
+    puts "Created by Jennifer Spriggs." 
   end
 
 
   def correct?(players_guess)
-    if players_guess == secret_number
+    #puts players_guess
+    if players_guess == 5
       puts "You win! The number was #{@secret_number}."
       return true
-    elsif players_guess < secret_number
+    elsif players_guess < 5
       puts "Make your next guess higher than #{players_guess}"
-    elsif players_guess > secret_number
+    elsif players_guess > 5
       puts "Make your next guess lower than #{players_guess}"
     end
     false
   end
 
-  #Do not change anything past this line
   private 
 
   def greeting
