@@ -38,12 +38,12 @@ class SecretNumberGame
   end
 
   def greet(player_name)
-    puts "Hi #{player_name}, please guess a number 1 to 10. You have #{@guesses} guesses"
+    "Hi #{player_name}, please guess a number 1 to 10. You have #{@guesses} guesses"
     #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
   end
 
   def created_by
-    puts "This game was created by #{@first_name} #{@last_name}"
+    "This game was created by #{@first_name} #{@last_name}"
   end
 
 
