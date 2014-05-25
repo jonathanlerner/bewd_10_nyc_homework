@@ -1,5 +1,6 @@
 require 'geocoder'
 require_relative 'lib/location'
+require_relative 'lib/oauth'
 
 def get_address
   puts "What is your location?"
@@ -14,4 +15,3 @@ end
 
 loc = get_address
 
-puts loc
