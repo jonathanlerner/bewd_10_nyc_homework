@@ -16,12 +16,12 @@ class Location
       @lat = adr.latitude
       @lon = adr.longitude
     else
-      no_match(user_location)
+      no_match
     end
   end
 
-  def no_match(user_location)
-    puts "we couldn't find you based on your input of " + user_location + ". \nTry again? (y) or (n)"
+  def no_match
+    puts "We couldn't find you based on your input.\nTry again? (y) or (n)"
     user_choice = gets.chomp.to_s.downcase
     if user_choice == "y"
       get_address
