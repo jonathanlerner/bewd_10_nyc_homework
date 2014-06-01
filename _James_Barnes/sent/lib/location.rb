@@ -1,14 +1,33 @@
 #location class
 class Location
   attr_accessor :city, :lat, :lon
+  def welcome_message
+    puts "Welcome to Location Sentiment checker. It evaluates the last 100 tweets in a given area for positive or negative sentiment."
+  end
 
+  #Asks user for location, and attempts to resolve input using geocoder.
   def get_address
+    welcome_message
     puts "What is your location?"
-    user_location = gets.chomp
-    adr = Geocoder.search(user_location)[0]
-    @city = adr.city
-    @lat = adr.latitude
-    @lon = adr.longitude
+    user_location = Geocoder.search(gets.chomp)[0]
+    if user_location != nil
+      adr = user_location
+      @city = adr.city
+      @lat = adr.latitude
+      @lon = adr.longitude
+    else
+      no_match(user_location)
+    end
+  end
+
+  def no_match(user_location)
+    puts "we couldn't find you based on your input of " + user_location + ". \nTry again? (y) or (n)"
+    user_choice = gets.chomp.to_s.downcase
+    if user_choice == "y"
+      get_address
+    else
+      abort("Maybe another time.")
+    end
   end
 
   def confirm_location

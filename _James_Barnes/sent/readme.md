@@ -11,7 +11,7 @@ This is a simple Ruby program to check the sentiment of tweets in a given geogra
 - Tells users the score, and a brief explaination of what that score means.
 
 ##OAuth
-OAuth tokens should be stored in the `.env` file, or the program will not work.
+OAuth tokens should be stored in a `.env` file, or the program will not work.
 
 ##Limitations
 The Twitter Search API will only return 100 tweets per location query, so the dataset for any given query is probably too small to perform any meaningful analysis on. Because the dataset is so small, and because this program doesn't persist any values after it has run, it didn't seem worthwhile to attempt writing anything to derive the sentiment of terms that aren't already in the AFINN wordlist. While most locations I tried running it with returned negative sentiment values, I found there were some locations, including Los Angeles, usually returned positive sentiments. While I'm sure the algorithm for determining sentiment could be further tuned based on the prevalence of negative results, getting an accurate response didn't seem as important for this exercise as did getting the geocoder and Twitter search API to work correnctly.
