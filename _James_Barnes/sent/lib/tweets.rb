@@ -2,20 +2,17 @@
 class Tweets
   attr_accessor :response, :parsed_tweets
 
-  def get_tweets(location)
-    # Change the following values to those provided on dev.twitter.com
-    # The consumer key identifies the application making the request.
-    # The access token identifies the user making the request.
-    consumer_key = OAuth::Consumer.new("sDpKGBJZ13UEVVHbXfGdUZ4es","GRxfYWUCRI69hmJQBxG6yIDtJdzPqLTef1YQXVYEM1RqwJua1z")
-    access_token = OAuth::Token.new("38451113-cjpCmIKxemXvaJBMtiMP3BVk4IeDoQg4YI9S5l7W2",
-      "RIOA8quEcR9urZetIfWVGQAvZC9wJxGheNlCIkWwD3vUi")
+  #queries the Twitter search api using latitude and longitde, and stores 
+  def get_tweets(location) 
+    # Enter Oauth consumer key, consumer secret, access token and access token secret in .env
+    consumer_key = OAuth::Consumer.new(ENV['consumer_key'],ENV['consumer_scret'])
+    access_token = OAuth::Token.new(ENV['access_token'], ENV['access_token_secret'])
 
     baseurl = "https://api.twitter.com"
     path = "/1.1/search/tweets.json"
     query = URI.encode_www_form("query" => "", "geocode" => "#{location.lat},#{location.lon},1mi","count" =>100)
     address = URI("#{baseurl}#{path}?#{query}")
     request = Net::HTTP::Get.new address.request_uri
-    
 
     # Set up HTTP.
     http             = Net::HTTP.new address.host, address.port
@@ -25,22 +22,26 @@ class Tweets
     # Issue the request.
     request.oauth! http, consumer_key, access_token
     http.start
-    response = http.request request
+    @response = http.request request
+    check_response
+  end
 
-
-    # Parse tweets if response code is 200
-    tweets = nil
-    def parse_tweets(tweets)
-      @parsed_tweets = []
-      tweets["statuses"].map do |tweet|
-        @parsed_tweets << tweet["text"]
-      end
-    end
-
-    
-    if response.code == '200' then
-      @response = JSON.parse(response.body)
-      parse_tweets(@response)
+  #parses tweets, and extracts the text of each tweet, storing it in an array
+  def parse_tweets
+    @response = JSON.parse(@response.body)
+    @parsed_tweets = []
+    @response["statuses"].map do |tweet|
+      @parsed_tweets << tweet["text"]
     end
   end
+  
+  # Checks that the query got a reponse code 200
+  def check_response
+    if @response.code == '200' then
+      parse_tweets
+    else
+      puts "There's an error. Response code: " + @response.code.to_s
+    end
+  end
+
 end
