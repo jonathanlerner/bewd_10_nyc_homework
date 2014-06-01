@@ -32,11 +32,33 @@ def show_message(message)
   puts message
 end
 
-def get_input
-  puts "What category of articles are you interested in ? \n Please select one of the options below:"
+def ask_category
+  print "\nWhat category of articles are you interested in ? \n Please select one of the options below:\n"
+  print "1. Sports \n2. Politics \n 3. Celebrity \n 4. Food \n 5. Movies\n"
   
-  gets.strip 
+  user_choice = gets.chomp!
+
+  
+  case user_choice.downcase
+  
+    when "sports", "1"
+      category = 1
+    when "politics", "2"
+      category = 2
+    when "celebrity", "3" 
+      category = 3
+    when "food", "4" 
+      category = 4 
+    when "movies", "5" 
+      category = 5 
+    else print "\nI do not understand that choice\n"
+      ask_category  
+  end
+
+print "category is : #{category}"       # ask_category
+    # set_category(category)  
 end
+
 
 def show_new_story_notification(story)
   "New story added! Title: #{story[:title]} \nCategory: #{story[:category].capitalize}, \nCurrent Upvotes: #{story[:upvotes]}\n"
@@ -81,9 +103,10 @@ end
 
 
 
-puts "Welcome to Media Savvy! A media selecion adviser. It's all about location, location, location!"
-
 stories = get_from_mashable
+puts "Welcome to Media Savvy! A media selecion adviser. It's all about location, location, location!"
+ask_category
+
 # show_all_stories stories
 
 
