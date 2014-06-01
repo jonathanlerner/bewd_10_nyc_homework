@@ -1,7 +1,7 @@
 #BEWD_10 Midterm: Location Sentiment Checker
 
 ##Introduction
-This is a simple Ruby program to check the sentiment of tweets in a given geographic area. The sentiment analysis uses the (AFINN wordlist)[http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010] as a basis for sentiment scores. To accomplish this, it
+This is a simple Ruby program to check the sentiment of tweets in a given geographic area. The sentiment analysis uses the [AFINN wordlist](http://www2.imm.dtu.dk/pubdb/views/publication_details.php?id=6010) as a basis for sentiment scores. To accomplish this, it
 - Loads the AFINN wordlist and term sentiment scores into a hash.
 - Asks users for their location.
 - Uses the `geocoder` gem to resolve the location into latatitude, longitude, and city values.
