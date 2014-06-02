@@ -13,7 +13,6 @@
 # **********************************************************************************************************************************
 
 
-
 require 'pry'
 require 'json'
 require 'rest-client' 
@@ -23,7 +22,7 @@ require_relative 'lib/recommendation'
 require_relative 'lib/story'
 
 
-# Define our methods
+# Define methods
 
 
 def ask_category
@@ -35,16 +34,16 @@ def ask_category
   case user_choice.downcase  
     when "sports", "1"
       category = "sports"
-      keywords = "game, tennis, NBA, basketball, US Open, baseball, golf, PGA"
+      keywords = "game, tennis, NBA, basketball, US Open, baseball, golf, PGA, health, fitness"
     when "politics", "2"
       category = "politics"
       keywords = "demonstration, president, prime minister, war, election, state, economy, NSA, political"
     when "celebrity", "3" 
       category = "celebrity"
-      keywords = "Beyonce, justin bieber, oprah, Matt Damon, Jay Carney"
+      keywords = "Beyonce, justin bieber, oprah, Matt Damon, Jay Carney, Disney"
     when "food", "4" 
       category = "food"
-      keywords = "sandwich, tacos, pizza, food, organic, vegan"
+      keywords = "sandwich, tacos, pizza, food, organic, vegan, apple"
     when "business", "5" 
       category = "business"
       keywords = "rental, market, CEO, stock, price, brand, sales"
@@ -84,9 +83,6 @@ def category_filter(stories, keywords)
       end
     end
   end 
-  
-  # priority = facebook_total, twitter_total, google_plus_total, linked_in_total
-  # priority.sort
 
   print "\n\n**********************************************************************\n\n"
   print "\nTotal number of facebook shares for this category: #{facebook_total}\n"
@@ -98,7 +94,7 @@ end
 
 def show_all_stories(stories)
   stories.each do |story|
-    print story
+    print "#{story.title}"
   end
 end
 
@@ -131,5 +127,5 @@ print "\n\n\t\t\t***************************************************************
 
 keywords = ask_category
 category_filter(stories, keywords)    
-# show_all_stories stories
+show_all_stories stories
 
