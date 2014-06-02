@@ -48,25 +48,23 @@ def ask_category
       category = "business"
       keywords = "rental, market, CEO, stock, price, brand, sales"
     else print "\nI do not understand that choice\n"
-      ask_category  
+      ask_category 
   end
-# Keyword.new(keywords)
 end
 
 
-def category_filter(stories, keywords)
+def category_filter(stories, match)
   counter=0
   facebook_total = 0
   twitter_total =0
   google_plus_total = 0
   linked_in_total = 0
-  # priority = []
-  keyword_array = keywords.split(%r{,\s*})
-  print "\nLooking for articles containing the following keywords: #{keyword_array}\n\n" 
+  match_array = match.split_into_array
+  print "\nLooking for articles containing the following keywords: #{match_array}\n\n" 
 
   stories.each do |s|
     match_found = false
-    keyword_array.any? do |word|
+    match_array.any? do |word|
       if ((s.content.downcase.include? word.downcase) && (match_found == false)) 
       counter+=1
       facebook_total += s.facebook_shares.to_i
@@ -125,7 +123,10 @@ print "\n\n\t\t\t\t\t\tWelcome to Media Savvy\n\n"
 print " \n\t\t\t\t\t\sA social media planner for ad placement. \n\t\t\t\t\tIt's all about location, location, location!\n"
 print "\n\n\t\t\t***********************************************************************\n"
 
+# Calls to various methods and classes
+
 keywords = ask_category
-category_filter(stories, keywords)    
-show_all_stories stories
+match = Keyword.new(keywords)
+category_filter(stories, match)    
+# show_all_stories stories
 
