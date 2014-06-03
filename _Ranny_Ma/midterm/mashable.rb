@@ -1,4 +1,4 @@
-require_relative 'newstories'
+ require_relative 'newstories'
 require_relative 'hotstories'
 # require_relative 'welcomemodule'
 
