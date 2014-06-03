@@ -4,12 +4,13 @@ require 'json'
 
 class Beer
 
-attr_accessor  :beername, :stylename, :organic, :desc, :avail, :category
+attr_accessor  :beername, :stylename, :organic, :desc, :avail, :category, :abv
 
 def getbeer
 newbeer = JSON.load(RestClient.get('http://api.brewerydb.com/v2/beer/random?key=86218246293bbfe86b588c02dbad2206'))
 
 newbeer["data"].default = "No Data for Key"
+
 
  if nil ^ stylename == false then 
  	stylename = "No Style Listed" end
@@ -22,7 +23,15 @@ newbeer["data"].default = "No Data for Key"
 
  if nil ^ avail == false then 
  	avail = "No availability info" end
+ 
+ if nil ^ organic == false then
+  	organic = "No info on organic" end
+ 
+ if nil ^ abv == false then
+  	abv = "No info on abv" end
 
+ if nil ^ beername == false then
+  	beername = "No beer name" end
 
   @beername = newbeer["data"]["name"]
   @stylename = newbeer["data"]["style"]["name"]
@@ -31,7 +40,10 @@ newbeer["data"].default = "No Data for Key"
   @desc =    newbeer["data"]["description"]
   @avail =   newbeer["data"]["available"]["description"]
   @category = newbeer["data"]["style"]["category"]["name"]
-  return 
+
+
+ 
+ 
 
 end #getbeer
 
