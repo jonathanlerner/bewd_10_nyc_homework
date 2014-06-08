@@ -1,0 +1,5 @@
+1. cd filepath
+2. git is a tool to track versions and GitHub is a site that allows you to use git in a more user friendly experience. 
+3. to add files, use 'touch' followed by the filepath/name
+4. github repo is where you'd store files remotely so that you can collaborate with others and have a backup on the cloud
+5. (c) git push origin master

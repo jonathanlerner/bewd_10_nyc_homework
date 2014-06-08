@@ -1,0 +1,5 @@
+1. cd
+2. Git is an open source VCS(version control system). Github on the other hand is a paid resource that uses Git to manage development between multiple users. 
+3. git add "filename"
+4. The GitHub repository is the main directory where all versions of files are stored in the GitHub Cloud. 
+5. b. git push origin master
