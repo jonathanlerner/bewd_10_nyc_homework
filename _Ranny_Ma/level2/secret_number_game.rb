@@ -22,13 +22,14 @@ class SecretNumberGame
     @first_name = "Ranny"
     @last_name = "Ma"
     @secret_number = rand(1..10)
-    @guesses = 5
+    @guesses = 4
   end
 
   def play
     greeting
+
     @guesses.times do |x|
-      guesses_left = @guesses -=1
+      guesses_left = @guesses -= 1
       puts "\nYou have #{guesses_left} guesses left!"
       puts "Please make your first guess:"
       players_guess = $stdin.gets.chomp.to_i
@@ -37,9 +38,24 @@ class SecretNumberGame
     puts "You lost! :-( The number to guess was #{@secret_number}."
   end
 
+  def ask_difficulty
+   puts "Do you want to play on easy (1), medium (2), or hard (3)?"
+    level = gets.chomp.to_i
+  end
+
+  def set_difficulty(level)
+    case level
+      when 1
+        @guesses == 6
+      when 2
+        @guesses == 4
+      when 3
+        @guesses == 2
+    end
+  end
+
   def greet(player_name)
     "Hi #{player_name}, please guess a number 1 to 10. You have #{@guesses} guesses"
-    #Create a string to use as your greeting. It should include the player_name and the rules, with the number of guesses the player gets.
   end
 
   def created_by
@@ -64,6 +80,7 @@ class SecretNumberGame
 
   def greeting
     puts created_by
+    ask_difficulty
     puts "\nWhat is your name?"
     player_name = $stdin.gets.chomp
     puts greet(player_name)
